@@ -5,7 +5,8 @@ if [[ $USER != "root" ]]; then
 fi 
 
 # get OS
-MY_OS=`cat /etc/*release | grep "^ID=" | cut -d"=" -f2`
+# MY_OS=`cat /etc/*release | grep "^ID=" | cut -d"=" -f2`
+
 
 ########################################################
 SOURCES_FOLDER="/opt/sources"
@@ -19,14 +20,14 @@ fi
 
 ########################################################
 echo "Installing required libraries"
-if [ "$MY_OS" == "ubuntu" ]; then
+if [ -f /etc/debian_version ]; then
     apt-get update
     apt-get install -y libpcre3 libpcre3-dev libperl-dev lua5.1 liblua5.1-0 liblua5.1-0-dev git
     apt-get install -y build-essential libpcre3 libpcre3-dev libssl-dev libtool autoconf apache2-prefork-dev libxml2-dev libcurl4-openssl-dev
     apt-get install -y libxml2-dev libxslt1-dev python-dev
     apt-get install -y libgd2-xpm-dev
     apt-get install -y libgeoip-dev
-elif [ "$MY_OS" == "\"centos\"" ]; then
+elif [ -f /etc/redhat-release ]; then
     yum -y upadte
     yum install -y httpd git lua lua-devel gcc gcc-c++ kernel-devel unzip openssl openssl-devel readline-devel
     yum install -y pcre pcre-devel libxml2 libxml2-devel curl curl-devel httpd-devel
@@ -54,7 +55,6 @@ tar xvzf "$SOURCES_FOLDER/nginx-1.9.9.tar.gz" -C "$SOURCES_FOLDER"
 # ./autogen.sh
 # ./configure --enable-standalone-module --disable-mlogc
 # make
-
 
 cd "$SOURCES_FOLDER/nginx-1.9.9"
 
