@@ -55,6 +55,7 @@ tar xvzf "$SOURCES_FOLDER/nginx-1.9.9.tar.gz" -C "$SOURCES_FOLDER"
 # ./configure --enable-standalone-module --disable-mlogc
 # make
 
+
 cd "$SOURCES_FOLDER/nginx-1.9.9"
 
 echo "Copmpiling Nginx"
