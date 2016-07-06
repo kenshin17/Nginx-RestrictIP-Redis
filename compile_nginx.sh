@@ -60,7 +60,8 @@ cd "$SOURCES_FOLDER/nginx-1.9.9"
 
 echo "Copmpiling Nginx"
 ./configure \
-        --prefix=/opt/nginx \
+        --prefix=/etc/nginx \
+        --sbin-path=/usr/sbin/nginx     \
         --conf-path=/etc/nginx/nginx.conf     \
         --with-debug \
         --with-pcre-jit --with-http_ssl_module \
@@ -89,4 +90,4 @@ make install
 
 ########################################################
 echo "Copying Restrict IP in Lua"
-cp -vR "$SOURCES_FOLDER/restrictip-lua/lua" /opt/nginx/conf.d/
+cp -vR "$SOURCES_FOLDER/restrictip-lua/lua" /etc/nginx/conf.d/
