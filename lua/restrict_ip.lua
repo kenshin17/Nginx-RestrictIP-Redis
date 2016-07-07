@@ -5,7 +5,7 @@ local redis_timeout = 200
 local redis_secret = nil
 local appname = "RESTRICT-IP"
 local database = 15
-JSON = (loadfile "/etc/nginx/conf.d/lua/resty/JSON.lua")()
+JSON = (loadfile "/etc/nginx/conf.d/resty/JSON.lua")()
 
 -- Notification
 local enable_sms = true
