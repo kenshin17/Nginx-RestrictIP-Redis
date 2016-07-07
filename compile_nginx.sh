@@ -6,7 +6,8 @@ fi
 
 # get OS
 # MY_OS=`cat /etc/*release | grep "^ID=" | cut -d"=" -f2`
-
+cp init.d/nginx-centos /etc/init.d/nginx
+chmod +x /etc/init.d/nginx
 
 ########################################################
 SOURCES_FOLDER="/opt/sources"
@@ -42,7 +43,7 @@ echo "Downloading Nginx, Plugins, Mod Security"
 git clone "https://github.com/openresty/lua-nginx-module.git" "$SOURCES_FOLDER/lua-nginx-module"
 git clone "https://github.com/openresty/set-misc-nginx-module.git" "$SOURCES_FOLDER/set-misc-nginx-module"
 git clone "https://github.com/simpl/ngx_devel_kit.git" "$SOURCES_FOLDER/ngx_devel_kit"
-git clone "https://github.com/hieuha/Nginx-RestrictIP-Redis.git" "$SOURCES_FOLDER/restrictip-lua"
+git clone "https://github.com/trieuvutrung/Nginx-RestrictIP-Redis.git" "$SOURCES_FOLDER/restrictip-lua"
 wget "http://nginx.org/download/nginx-1.9.9.tar.gz" -O "$SOURCES_FOLDER/nginx-1.9.9.tar.gz"
 git clone "https://github.com/trieuvutrung/modsecurity-2.8.0.git" "$SOURCES_FOLDER/modsecurity-2.8.0"
 
@@ -91,5 +92,3 @@ make install
 ########################################################
 echo "Copying Restrict IP in Lua"
 cp -vR "$SOURCES_FOLDER/restrictip-lua/lua" /etc/nginx/conf.d/
-cp -vR "$SOURCES_FOLDER/init.d/nginx-centos" /etc/init.d/nginx
-chmod +x /etc/init.d/nginx
