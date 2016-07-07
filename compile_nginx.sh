@@ -91,3 +91,5 @@ make install
 ########################################################
 echo "Copying Restrict IP in Lua"
 cp -vR "$SOURCES_FOLDER/restrictip-lua/lua" /etc/nginx/conf.d/
+cp -vR "$SOURCES_FOLDER/init.d/nginx-centos" /etc/init.d/nginx
+chmod +x /etc/init.d/nginx
