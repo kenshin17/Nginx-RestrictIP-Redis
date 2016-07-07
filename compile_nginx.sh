@@ -29,7 +29,7 @@ if [ -f /etc/debian_version ]; then
     apt-get install -y libgeoip-dev
 elif [ -f /etc/redhat-release ]; then
     yum -y upadte
-    yum install -y httpd git lua lua-devel gcc gcc-c++ kernel-devel unzip openssl openssl-devel readline-devel
+    yum install -y httpd git redis lua lua-devel gcc gcc-c++ kernel-devel unzip openssl openssl-devel readline-devel
     yum install -y pcre pcre-devel libxml2 libxml2-devel curl curl-devel httpd-devel
     yum install -y openssl openssl-devel
     yum install -y libxml2-devel libxslt-devel
