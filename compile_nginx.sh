@@ -24,7 +24,7 @@ echo "Installing required libraries"
 if [ -f /etc/debian_version ]; then
     apt-get update
     apt-get install -y libpcre3 libpcre3-dev libperl-dev lua5.1 liblua5.1-0 liblua5.1-0-dev git
-    apt-get install -y build-essential libpcre3 libpcre3-dev libssl-dev libtool autoconf apache2-prefork-dev libxml2-dev libcurl4-openssl-dev
+    apt-get install -y build-essential libpcre3 libpcre3-dev libssl-dev libtool autoconf apache2-dev apache2-prefork-dev libxml2-dev libcurl4-openssl-dev
     apt-get install -y libxml2-dev libxslt1-dev python-dev
     apt-get install -y libgd2-xpm-dev
     apt-get install -y libgeoip-dev
