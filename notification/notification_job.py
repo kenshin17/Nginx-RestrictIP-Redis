@@ -17,14 +17,14 @@ REDIS_SECRET = None
 REDIS_DATABASE = 15
 KEY_SMS = "IP_SMS"
 
-# Slack
-API_WEBHOOK = "https://hooks.slack.com/services/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"
-API_CHANNEL = "#alert"
-API_USERNAME = "Bulldog"
+# Slack kteam17
+API_WEBHOOK = " https://hooks.slack.com/services/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 "
+API_CHANNEL = "#zb-alert"
+API_USERNAME = "clgt"
 API_PAYLOAD = {"channel": API_CHANNEL,
                "username": API_USERNAME,
                "text": None,
-               "icon_emoji": ":dog:"}
+               "icon_emoji": ":ghost:"}
 # SMS
 SMS_URL = ""
 
